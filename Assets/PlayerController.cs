@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && this.rigid2D.velocity.y == 0.0){
+        if(Input.GetMouseButtonDown(0) && Mathf.Abs(this.rigid2D.velocity.y) < 1.0){
             this.rigid2D.AddForce(transform.up * this.jumpForce);
         }
     }
